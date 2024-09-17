@@ -209,6 +209,15 @@ body {
     100% { transform: translateX(0); }
 }
 
+.error {
+    color: red;
+    filter: drop-shadow(1px 1px 5px red);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
 .shake {
     animation: shake 0.5s ease-in-out;
 }

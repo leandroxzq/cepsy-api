@@ -8,6 +8,10 @@ let receberResposta = async (cep) => {
     const req = await fetch(url)
     const obj = await req.json()
 
+    if (obj.erro) {
+        throw new Error();
+    }
+
     return obj;
 }
 
@@ -18,14 +22,16 @@ document.getElementById("form").addEventListener('submit', async (event) => {
 
     const saida = document.querySelector(".section-output");
     const buscar = document.querySelector(".section-find");
+    const errorDiv = document.getElementById("error");
 
     if (cep === "" || isNaN(cep) || cep.length <= 7) {
         const input = document.querySelector(".find__input");
         input.style.border = "2px solid red"
         input.classList.add("shake")
+        errorDiv.textContent = "Digite 8 números"
+        errorDiv.classList.remove("disabled")
 
         setTimeout(() => {
-            input.style.border = ""
             input.classList.remove("shake");
         }, 1000);
         return;
@@ -53,12 +59,15 @@ document.getElementById("form").addEventListener('submit', async (event) => {
                     buscar.classList.add("active");
                     saida.classList.remove("active");
                     saida.classList.add("disabled");
-                    
+                    errorDiv.classList.add("disabled");
+                    const input = document.querySelector(".find__input");
+                    input.style.border = "2px solid #dbdbdb"
                     cepInput.value = "";
                 });
             } 
-        } catch {
-            console.log("error")
+        } catch (error) {
+            errorDiv.textContent = "CEP inválido"
+            errorDiv.classList.remove("disabled")
         }
     }
 })
