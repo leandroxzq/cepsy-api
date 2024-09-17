@@ -20,15 +20,16 @@ document.getElementById("form").addEventListener('submit', async (event) => {
 
     const cep = document.getElementById("cep").value;
 
+    const container = document.querySelector(".container-wrapper")
     const saida = document.querySelector(".section-output");
     const buscar = document.querySelector(".section-find");
     const errorDiv = document.getElementById("error");
 
-    if (cep === "" || isNaN(cep) || cep.length <= 7) {
+    if (cep === "" || isNaN(cep) || cep.length <= 7 || cep.length >= 9) {
         const input = document.querySelector(".find__input");
         input.style.border = "2px solid red"
         input.classList.add("shake")
-        errorDiv.textContent = "Digite 8 números"
+        errorDiv.textContent = "Insira 8 dígitos"
         errorDiv.classList.remove("disabled")
 
         setTimeout(() => {
@@ -44,9 +45,13 @@ document.getElementById("form").addEventListener('submit', async (event) => {
                 outputLocalidade.textContent = array.localidade;
                 outputBairro.textContent = array.bairro;
                 outputLogradouro.textContent = array.logradouro;
-        
+                
+                container.classList.add("activated")
+
+                buscar.classList.remove("activated");
                 buscar.classList.add("disabled");
                 saida.classList.remove("disabled");
+                saida.classList.add("activated");
         
                 const buttonReturn = document.querySelector(".return");
         
@@ -56,10 +61,11 @@ document.getElementById("form").addEventListener('submit', async (event) => {
                     const cepInput = document.getElementById("cep");
         
                     buscar.classList.remove("disabled");
-                    buscar.classList.add("active");
-                    saida.classList.remove("active");
+                    buscar.classList.add("activated");
+                    saida.classList.remove("activated");
                     saida.classList.add("disabled");
                     errorDiv.classList.add("disabled");
+
                     const input = document.querySelector(".find__input");
                     input.style.border = "2px solid #dbdbdb"
                     cepInput.value = "";
