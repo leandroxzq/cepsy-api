@@ -8,7 +8,7 @@ let receberResposta = async (cep) => {
     const req = await fetch(url)
     const obj = await req.json()
 
-    return obj
+    return obj;
 }
 
 document.getElementById("form").addEventListener('submit', async (event) => {
@@ -19,44 +19,47 @@ document.getElementById("form").addEventListener('submit', async (event) => {
     const saida = document.querySelector(".section-output");
     const buscar = document.querySelector(".section-find");
 
-    if (cep === "") {
+    if (cep === "" || isNaN(cep) || cep.length <= 7) {
         const input = document.querySelector(".find__input");
-        input.style.border = "3px solid red"
-        input.classList.add = "shake"
+        input.style.border = "2px solid red"
+        input.classList.add("shake")
 
         setTimeout(() => {
+            input.style.border = ""
             input.classList.remove("shake");
-        }, 500); // Tempo igual à duração da animação
-
+        }, 1000);
         return;
-    }
+    } else {
+        try {
+            const array = await receberResposta(cep)
 
-    const array = await receberResposta(cep);
-
-    if (array) {
+            if (array) {
+                outputEstado.textContent = array.estado + "-" + array.uf;
+                outputLocalidade.textContent = array.localidade;
+                outputBairro.textContent = array.bairro;
+                outputLogradouro.textContent = array.logradouro;
         
-        outputEstado.textContent = array.estado + "-" + array.uf;
-        outputLocalidade.textContent = array.localidade;
-        outputBairro.textContent = array.bairro;
-        outputLogradouro.textContent = array.logradouro;
-
-        buscar.classList.add("disabled");
-        saida.classList.remove("disabled");
-
-        const buttonReturn = document.querySelector(".return");
-
-        buttonReturn.addEventListener("click", () => {
-            const buscar = document.querySelector(".section-find");
-            const saida = document.querySelector(".section-output");
-            const cepInput = document.getElementById("cep");
-
-            buscar.classList.remove("disabled");
-            buscar.classList.add("active");
-            saida.classList.remove("active");
-            saida.classList.add("disabled");
-            
-            cepInput.value = "";
-        });
+                buscar.classList.add("disabled");
+                saida.classList.remove("disabled");
+        
+                const buttonReturn = document.querySelector(".return");
+        
+                buttonReturn.addEventListener("click", () => {
+                    const buscar = document.querySelector(".section-find");
+                    const saida = document.querySelector(".section-output");
+                    const cepInput = document.getElementById("cep");
+        
+                    buscar.classList.remove("disabled");
+                    buscar.classList.add("active");
+                    saida.classList.remove("active");
+                    saida.classList.add("disabled");
+                    
+                    cepInput.value = "";
+                });
+            } 
+        } catch {
+            console.log("error")
+        }
     }
 })
 
