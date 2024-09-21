@@ -38,6 +38,9 @@ body {
   animation: scaleBg 1s;
 }
 .container-wrapper__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin: 15px 0;
   font-size: 1.2rem;
@@ -97,6 +100,24 @@ body {
   z-index: 1;
   text-align: center;
 }
+.find__title::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: logoAnimation 3s alternate infinite ease-in-out;
+}
+@keyframes logoAnimation {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(90px);
+  }
+}
 .find__label {
   color: #fff;
   text-align: left;
@@ -124,16 +145,31 @@ body {
   text-shadow: 1px 1px 3px #000;
 }
 .section-output__button {
+  position: relative;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
   background: transparent;
   border: none;
+  margin: 15px 0 5px;
+}
+.section-output__button:active::after {
+  content: "Copiado!";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  opacity: 1;
+  animation: fadeOut 2s forwards;
 }
 .section-output__button:hover {
-  transform: scale(1.1);
   text-decoration: underline;
-  transition: 0.2s ease-in;
+  transition: 0.3s ease-in;
 }
 .section-output__title {
   font-size: 2rem;
@@ -163,6 +199,11 @@ body {
   text-align: center;
   gap: 10px;
   padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 .section-output .output__label {
   font-size: 1.1rem;
@@ -170,6 +211,9 @@ body {
 }
 .section-output .output__value {
   font-size: 1.4rem;
+}
+.section-output .output:hover {
+  background-color: rgba(224, 0, 0, 0.1);
 }
 
 @media (width <= 500px) {
@@ -235,6 +279,10 @@ body {
   animation: fadeIn 0.5s ease-out, scaleBg 1s;
 }
 
+.scale-animation {
+  animation: scaleBg 1s;
+}
+
 @keyframes scaleBg {
   0% {
     transform: scale(0.8);
@@ -243,12 +291,11 @@ body {
     transform: scale(1);
   }
 }
-.load {
-  content: " ";
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
+.loading-icon {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */

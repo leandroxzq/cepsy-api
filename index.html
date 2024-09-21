@@ -20,24 +20,31 @@
                         <input type="text" name="cep" id="cep" class="find__input">
                         <span class="error disabled" id="error"></span>
                     </div>
-                    <button type="submit" class="container-wrapper__button">Buscar</button>
+                    <button type="submit" class="container-wrapper__button">
+                        <div class="button__find">Buscar</div>
+                        <i class="fa fa-spinner fa-spin loading-icon" style="display: none;"></i>
+                    </button>
                 </form>
             </section>
             <section class="section-output disabled">
                 <span class="section-output__title">Resultado</span>
                 <div class="output">
+                    <i class="fa-solid fa-map-marker-alt"></i>
                     <span class="output__label">Estado:</span>
                     <span class="output__value" id="estado"></span>
                 </div>
                 <div class="output">
+                    <i class="fa-solid fa-map-marker-alt"></i>
                     <span class="output__label">Localidade:</span>
                     <span class="output__value" id="localidade"></span>
                 </div>
                 <div class="output">
+                    <i class="fa-solid fa-map-marker-alt"></i>
                     <span class="output__label">Bairro:</span>
                     <span class="output__value" id="bairro"></span>
                 </div>
                 <div class="output">
+                    <i class="fa-solid fa-map-marker-alt"></i>
                     <span class="output__label">Logradouro:</span>
                     <span class="output__value" id="logradouro"></span>
                 </div>
