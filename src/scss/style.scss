@@ -1,324 +1,333 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 $color: #ca4ea9f3;
 $color-dark: darken($color, 15%);
-$color-border: rgba(darken($color, 60%), .45);
+$color-border: rgba(darken($color, 60%), 0.45);
 $color-text: darken($color, 85%);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: "Jost", sans-serif;
+	font-family: "Jost", sans-serif;
 }
 
 .background {
-    background: url(../img/bgholographic.png) no-repeat center center;
-    filter: grayscale(60%) hue-rotate(80deg);
-    background-size: cover;
-    height: 100dvh;
-    width: 100vw;
-    position: fixed;
-    z-index: -1000;
+	background: url(../../public/bgholographic.png) no-repeat center center;
+	filter: grayscale(60%) hue-rotate(80deg);
+	background-size: cover;
+	height: 100dvh;
+	width: 100vw;
+	position: fixed;
+	z-index: -1000;
 }
 
 .main {
-    height: 100dvh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	height: 100dvh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .container-wrapper {
-    background: #420d34f3;
-    filter: grayscale(50%);
-    padding: 2rem;
-    margin: 0.5rem;
-    border-radius: 2rem;
-    max-width: 450px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: scaleBg 1s;
-    
-    &__button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin: 15px 0;
-        font-size: 1.2rem;
-        background: $color;
-        border-radius: 3em;
-        letter-spacing: 5px;
-        border: 0;
-        border: 3px solid $color-border;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bolder;
-        text-shadow: 0 0 3px #000;
-        outline: none;
-        padding: 1.1rem;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: all 150ms cubic-bezier(.175, .885, .32, 1.275);
-        
-        &::before {
-            background: $color-dark;
-            border-radius: inherit;
-            content: '';
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            transform: translate3d(0, .75em, -1em);
-            transition: all 150ms cubic-bezier(.175, .885, .32, 1.275);
-            width: 100%;
-        }
-    
-        &:hover {
-            transform: translate3d(0, .5em, -1em);  
-            &::before {
-            transform: translate3d(0, .5em, -1em);
-            }
-        }
-    
-      &:active {
-          background: $color;
-          transform: translate(0, .75em);
-    
-          &::before {
-            box-shadow:
-              0 0 0 3px $color-border,
-              0 0 $color;
-            transform: translate3d(0, 0, -1em);
-            }
-        }
-    }
+	background: #420d34f3;
+	filter: grayscale(50%);
+	padding: 2rem;
+	margin: 0.5rem;
+	border-radius: 2rem;
+	max-width: 450px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	animation: scaleBg 1s;
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 15px 0;
+		font-size: 1.2rem;
+		background: $color;
+		border-radius: 3em;
+		letter-spacing: 5px;
+		border: 0;
+		border: 3px solid $color-border;
+		color: #fff;
+		cursor: pointer;
+		font-weight: bolder;
+		text-shadow: 0 0 3px #000;
+		outline: none;
+		padding: 1.1rem;
+		position: relative;
+		transform-style: preserve-3d;
+		transition: all 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+		&::before {
+			background: $color-dark;
+			border-radius: inherit;
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: translate3d(0, 0.75em, -1em);
+			transition: all 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			width: 100%;
+		}
+
+		&:hover {
+			transform: translate3d(0, 0.5em, -1em);
+			&::before {
+				transform: translate3d(0, 0.5em, -1em);
+			}
+		}
+
+		&:active {
+			background: $color;
+			transform: translate(0, 0.75em);
+
+			&::before {
+				box-shadow: 0 0 0 3px $color-border, 0 0 $color;
+				transform: translate3d(0, 0, -1em);
+			}
+		}
+	}
 }
 
 .find {
-    animation: fadeIn 0.5s ease-out, scaleBg 0.5s;
+	animation: fadeIn 0.5s ease-out, scaleBg 0.5s;
 
-    &__title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-        color: #fcfcfc;
-        text-transform: uppercase;
-        text-shadow: 0 0 3px #000;
-        position: relative;
-        z-index: 1;
-        text-align: center;
+	&__title {
+		font-size: 2rem;
+		margin-bottom: 20px;
+		letter-spacing: 2px;
+		color: #fcfcfc;
+		text-transform: uppercase;
+		text-shadow: 0 0 3px #000;
+		position: relative;
+		z-index: 1;
+		text-align: center;
 
-        &::before {
-            content: "";
-            position: absolute;
-            width: 30px;
-            height: 5px;
-            bottom: 0;
-            background-color: #fff;
-            border-radius: 5px;
-            animation: logoAnimation 3s alternate infinite ease-in-out;
-        }
+		&::before {
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 5px;
+			bottom: 0;
+			background-color: #fff;
+			border-radius: 5px;
+			animation: logoAnimation 3s alternate infinite ease-in-out;
+		}
 
-        @keyframes logoAnimation {
-            0% {
-                transform: translateX(-10px);
-            } 
-            100% {
-                transform: translateX(90px);
-            }
-        }
-    }
+		@keyframes logoAnimation {
+			0% {
+				transform: translateX(-10px);
+			}
+			100% {
+				transform: translateX(90px);
+			}
+		}
+	}
 
-    &__label { 
-        color: #fff;
-        text-align: left;
-    }
+	&__label {
+		color: #fff;
+		text-align: left;
+	}
 
-    &__input {
-        width: 100%;
-        padding: 10px;
-        margin: 2px 0;
-        border-radius: 8px;
-        border: 2px solid #dbdbdb;
-        font-size: 16px;
-    }
+	&__input {
+		width: 100%;
+		padding: 10px;
+		margin: 2px 0;
+		border-radius: 8px;
+		border: 2px solid #dbdbdb;
+		font-size: 16px;
+	}
 
-    &__input:focus {
-        outline: none;
-    }
+	&__input:focus {
+		outline: none;
+	}
 }
 
 .section-output {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    color: #fff;
-    text-shadow: 1px 1px 3px #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	color: #fff;
+	text-shadow: 1px 1px 3px #000;
 
-    &__button {
-        position: relative;
-        color: #fff;
-        font-size: 1rem;
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        margin: 15px 0 5px;
+	&__button {
+		position: relative;
+		color: #fff;
+		font-size: 1rem;
+		cursor: pointer;
+		background: transparent;
+		border: none;
+		margin: 15px 0 5px;
 
-        &:active::after {
-            content: "Copiado!";
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #000;
-            color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            opacity: 1;
-            animation: fadeOut 2s forwards;
-        }
+		&:active::after {
+			content: "Copiado!";
+			position: absolute;
+			top: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #000;
+			color: #fff;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 0.8rem;
+			opacity: 1;
+			animation: fadeOut 2s forwards;
+		}
 
-        &:hover {
-            text-decoration: underline;
-            transition: 0.3s ease-in;
-        }
-    }
+		&:hover {
+			text-decoration: underline;
+			transition: 0.3s ease-in;
+		}
+	}
 
-    &__title {
-        font-size: 2rem;
-        text-align: center;
-        font-weight: bolder;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        transform: translateX(-10px);
-        gap: 10px;
-   
-        &::before {
-            content: "  ";
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            display: inline-block;
-            opacity: 1;
-            animation: blink 1s infinite;
-        }
-    }
+	&__title {
+		font-size: 2rem;
+		text-align: center;
+		font-weight: bolder;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		transform: translateX(-10px);
+		gap: 10px;
 
-    .output {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        text-align: center;
-        gap: 10px;
-        padding: 0.5rem;  
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease-in-out;
-    
-        &__label {
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
+		&::before {
+			content: "  ";
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #ffffff;
+			display: inline-block;
+			opacity: 1;
+			animation: blink 1s infinite;
+		}
+	}
 
-        &__value {
-            font-size: 1.4rem;
-        }
+	.output {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+		gap: 10px;
+		padding: 0.5rem;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		padding: 10px;
+		background-color: rgba(255, 255, 255, 0.1);
+		transition: all 0.3s ease-in-out;
 
-        &:hover {
-            background-color: rgba(224, 0, 0, 0.1);
-        }
-    }
+		&__label {
+			font-size: 1.1rem;
+			letter-spacing: 2px;
+		}
+
+		&__value {
+			font-size: 1.4rem;
+		}
+
+		&:hover {
+			background-color: rgba(224, 0, 0, 0.1);
+		}
+	}
 }
 
 @media (width <= 500px) {
-    .container-wrapper {
-        max-width: 450px;
-        padding: 1rem;
-    }
+	.container-wrapper {
+		max-width: 450px;
+		padding: 1rem;
+	}
 }
 
 @keyframes blink {
-  0%, 100% {
-      opacity: 1;
-  }
-  50% {
-      opacity: 0; 
-  }
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    75% { transform: translateX(-10px); }
-    100% { transform: translateX(0); }
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-10px);
+	}
+	50% {
+		transform: translateX(10px);
+	}
+	75% {
+		transform: translateX(-10px);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 .error {
-    color: red;
-    font-weight: bolder;
-    filter: drop-shadow(1px 1px 5px red);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 5px;
+	color: red;
+	font-weight: bolder;
+	filter: drop-shadow(1px 1px 5px red);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
 }
 
 .shake {
-    animation: shake 0.5s ease-in-out;
+	animation: shake 0.5s ease-in-out;
 }
 
 .disabled {
-    display: none;
+	display: none;
 }
 
 @keyframes fadeIn {
-    0% {
-        transform: scale(0.6);
-        opacity: 0;
-    }
+	0% {
+		transform: scale(0.6);
+		opacity: 0;
+	}
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
 .activated {
-    animation: fadeIn 0.5s ease-out, scaleBg 1s;
+	animation: fadeIn 0.5s ease-out, scaleBg 1s;
 }
 
 .scale-animation {
-    animation: scaleBg 1s;
+	animation: scaleBg 1s;
 }
 
 @keyframes scaleBg {
-    0% {
-        transform: scale(0.8);
-    }
+	0% {
+		transform: scale(0.8);
+	}
 
-    100% {
-        transform: scale(1);
-    }
+	100% {
+		transform: scale(1);
+	}
 }
 
 .loading-icon {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.6rem;
 }

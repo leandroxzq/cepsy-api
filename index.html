@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="src/img/icon.jpeg" type="image/x-icon">
-    <title>Cepsy</title>
-</head>
-<body>
-    <div class="background"></div>
-    <div class="main">
-        <div class="container-wrapper">
-            <section class="section-find activated">
-                <form id="form" class="find">
-                    <h1 class="find__title">Cepsy</h1>
-                    <div class="find__wrapper">
-                        <label for="cep" class="find__label">Digite seu cep:</label>
-                        <input type="text" name="cep" id="cep" class="find__input">
-                        <span class="error disabled" id="error"></span>
-                    </div>
-                    <button type="submit" class="container-wrapper__button">
-                        <div class="button__find">Buscar</div>
-                        <i class="fa fa-spinner fa-spin loading-icon" style="display: none;"></i>
-                    </button>
-                </form>
-            </section>
-            <section class="section-output disabled">
-                <span class="section-output__title">Resultado</span>
-                <div class="output">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span class="output__label">Estado:</span>
-                    <span class="output__value" id="estado"></span>
-                </div>
-                <div class="output">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span class="output__label">Localidade:</span>
-                    <span class="output__value" id="localidade"></span>
-                </div>
-                <div class="output">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span class="output__label">Bairro:</span>
-                    <span class="output__value" id="bairro"></span>
-                </div>
-                <div class="output">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span class="output__label">Logradouro:</span>
-                    <span class="output__value" id="logradouro"></span>
-                </div>
-                <button class="section-output__button" id="copyButton"><i class="fa-solid fa-copy"></i> Copiar dados</button>
-                <button class="container-wrapper__button return">Voltar</button>
-            </section>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="src/scss/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="shortcut icon" href="/public/icon.jpeg" type="image/x-icon" />
+		<title>Cepsy</title>
+	</head>
+	<body>
+		<div class="background"></div>
+		<div class="main">
+			<div class="container-wrapper">
+				<section class="section-find activated">
+					<form id="form" class="find">
+						<h1 class="find__title">Cepsy</h1>
+						<div class="find__wrapper">
+							<label for="cep" class="find__label">Digite seu cep:</label>
+							<input type="text" name="cep" id="cep" class="find__input" />
+							<span class="error disabled" id="error"></span>
+						</div>
+						<button type="submit" class="container-wrapper__button">
+							<div class="button__find">Buscar</div>
+							<i class="fa fa-spinner fa-spin loading-icon" style="display: none"></i>
+						</button>
+					</form>
+				</section>
+				<section class="section-output disabled">
+					<span class="section-output__title">Resultado</span>
+					<div class="output">
+						<i class="fa-solid fa-map-marker-alt"></i>
+						<span class="output__label">Estado:</span>
+						<span class="output__value" id="estado"></span>
+					</div>
+					<div class="output">
+						<i class="fa-solid fa-map-marker-alt"></i>
+						<span class="output__label">Localidade:</span>
+						<span class="output__value" id="localidade"></span>
+					</div>
+					<div class="output">
+						<i class="fa-solid fa-map-marker-alt"></i>
+						<span class="output__label">Bairro:</span>
+						<span class="output__value" id="bairro"></span>
+					</div>
+					<div class="output">
+						<i class="fa-solid fa-map-marker-alt"></i>
+						<span class="output__label">Logradouro:</span>
+						<span class="output__value" id="logradouro"></span>
+					</div>
+					<button class="section-output__button" id="copyButton">
+						<i class="fa-solid fa-copy"></i> Copiar dados
+					</button>
+					<button class="container-wrapper__button return">Voltar</button>
+				</section>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>

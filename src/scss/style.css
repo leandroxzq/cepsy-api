@@ -10,7 +10,7 @@ body {
 }
 
 .background {
-  background: url(../img/bgholographic.png) no-repeat center center;
+  background: url(../../public/bgholographic.png) no-repeat center center;
   filter: grayscale(60%) hue-rotate(80deg);
   background-size: cover;
   height: 100dvh;
@@ -296,6 +296,4 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
