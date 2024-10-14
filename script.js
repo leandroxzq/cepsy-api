@@ -34,6 +34,8 @@ const processarResposta = async (cep) => {
 				outputBairro.textContent = array.bairro;
 				outputLogradouro.textContent = array.logradouro;
 
+				containerWrapper.classList.add("activated");
+
 				sectionFind.classList.remove("activated");
 				sectionFind.classList.add("disabled");
 				sectionOutput.classList.remove("disabled");
