@@ -65,7 +65,7 @@ const processarResposta = async (cep) => {
 	}
 };
 
-input.addEventListener("change", () => {
+input.addEventListener("input", () => {
 	input.style.border = "2px solid #dbdbdb";
 	uxError.classList.add("disabled");
 });
@@ -75,7 +75,9 @@ document.getElementById("form").addEventListener("submit", async (event) => {
 
 	const cep = document.getElementById("cep").value;
 
-	if (cep === "" || isNaN(cep) || cep.length <= 7 || cep.length >= 9) {
+	const cepSemHifen = input.value.replace("-", "");
+
+	if (cepSemHifen === "" || isNaN(cepSemHifen) || cepSemHifen.length <= 7 || cepSemHifen.length >= 9) {
 		input.style.border = "2px solid red";
 		input.classList.add("shake");
 		uxError.textContent = "Insira 8 dígitos";

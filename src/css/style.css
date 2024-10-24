@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-  font-family: "Jost", sans-serif;
+  font-family: "Fira Code", monospace;
 }
 
 .background {
@@ -43,6 +44,7 @@ body {
   align-items: center;
   width: 100%;
   margin: 15px 0;
+  font-family: "Fira Code", monospace;
   font-size: 1.2rem;
   background: rgba(202, 78, 169, 0.9529411765);
   border-radius: 3em;
@@ -90,8 +92,9 @@ body {
   animation: fadeIn 0.5s ease-out, scaleBg 0.5s;
 }
 .find__title {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: "Rowdies", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
   letter-spacing: 2px;
   color: #fcfcfc;
   text-transform: uppercase;
@@ -107,7 +110,7 @@ body {
   height: 5px;
   bottom: 0;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 0 5px 0 5px;
   animation: logoAnimation 3s alternate infinite ease-in-out;
 }
 @keyframes logoAnimation {
@@ -115,7 +118,7 @@ body {
     transform: translateX(-10px);
   }
   100% {
-    transform: translateX(90px);
+    transform: translateX(135px);
   }
 }
 .find__label {
@@ -128,7 +131,8 @@ body {
   margin: 2px 0;
   border-radius: 8px;
   border: 2px solid #dbdbdb;
-  font-size: 16px;
+  font-size: 1rem;
+  font-family: "Fira Code", monospace;
 }
 .find__input:focus {
   outline: none;
