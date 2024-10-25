@@ -15,6 +15,10 @@ $color-text: darken($color, 85%);
 
 body {
 	font-family: "Fira Code", monospace;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .background {
