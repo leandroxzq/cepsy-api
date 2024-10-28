@@ -144,48 +144,53 @@ body {
 
 .section-output {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
   color: #fff;
   text-shadow: 1px 1px 3px #000;
 }
 .section-output__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  color: #fff;
+  color: #eee;
   font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: bolder;
   cursor: pointer;
   background: transparent;
   border: none;
   margin: 15px 0 5px;
+  gap: 5px;
 }
-.section-output__button:active::after {
-  content: "Copiado!";
+.section-output__button__badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.8rem;
   position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #000;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  opacity: 1;
-  animation: fadeOut 2s forwards;
+  top: -50px;
+  font-weight: bolder;
+  height: 50px;
+  width: 100px;
+  background: #000;
+  display: none;
 }
-.section-output__button:hover {
+.section-output__button p:hover {
   text-decoration: underline;
   transition: 0.3s ease-in;
 }
 .section-output__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   text-align: center;
   font-weight: bolder;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   transform: translateX(-10px);
   gap: 10px;
 }
@@ -201,8 +206,8 @@ body {
 }
 .section-output .output {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   text-align: center;
   gap: 10px;
@@ -212,6 +217,9 @@ body {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
+}
+.section-output .output i {
+  animation: blink 1.2s infinite;
 }
 .section-output .output__label {
   font-size: 1.1rem;
@@ -256,12 +264,13 @@ body {
   }
 }
 .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: red;
   font-weight: bolder;
   filter: drop-shadow(1px 1px 5px red);
   width: 100%;
-  display: flex;
-  justify-content: center;
   padding-top: 5px;
 }
 

@@ -98,6 +98,13 @@ document.getElementById("copyButton").addEventListener("click", async () => {
 	const dados = `Estado: ${outputEstado.innerText}\nLocalidade: ${outputLocalidade.innerText}\nBairro: ${outputBairro.innerText}\nLogradouro: ${outputLogradouro.innerText}`;
 
 	await navigator.clipboard.writeText(dados);
+
+	const badge = document.querySelector(".section-output__button__badge");
+	badge.style.display = "flex";
+
+	setTimeout(() => {
+		badge.style.display = "none";
+	}, 1500);
 });
 
 const buttonReturn = document.querySelector(".return");
